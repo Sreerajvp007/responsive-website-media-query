@@ -750,7 +750,7 @@
 
 .contact{
     width: 70%;
-    height: 700px;
+    height: 600px;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -769,7 +769,7 @@
     border-radius: 8px;
     height: 30px;
     background-color: rgb(59, 58, 65);
-    margin-bottom: 25px;
+   
     margin-top: 5px;
     border: 1px solid red;
     padding: 10px;
@@ -782,6 +782,7 @@
     
    
 }
+
 .contact-text{
     width: 30%;
     height: 600px;
@@ -793,7 +794,7 @@
 }
 textarea{
     font-family: system-ui;
-    margin-bottom: 25px;
+    
     margin-top: 5px;
     border-radius: 8px;
     border: 1px solid red;
@@ -810,6 +811,7 @@ textarea{
     border-radius: 8px;
     height: 30px;
     border: none;
+    margin-top: 25px;
 
     
 }
@@ -845,6 +847,15 @@ textarea{
 .footer-last>.icons{
     display: flex;
     gap: 20px;
+}
+
+/* formvalid */
+.error-message{
+    color: red;
+    font-size: 12px;
+    font-family: sans-serif;
+    
+  
 }
 
 

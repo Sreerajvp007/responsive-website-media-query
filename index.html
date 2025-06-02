@@ -288,13 +288,17 @@
                 <h2>Send Us a Message</h2>
                 <p>Fill out the contact form to the channel team</p>
                 <label for="name">Name</label><br>
-                <input type="text" id="name" name="name" placeholder="name" ><br>
+                <input type="text" id="name" name="name" placeholder="name" >
+                <span id="name-error" class="error-message"></span><br>
                 <label for="email">Email</label><br>
-                <input type="email" id="email" name="email" placeholder="email"><br>
+                <input type="email" id="email" name="email" placeholder="email">
+                <span id="email-error" class="error-message"></span><br>
                 <label for="subject">Subject</label><br>
-                <input type="text" id="subject" name="subject" placeholder="subject"><br>
+                <input type="text" id="subject" name="subject" placeholder="subject">
+                <span id="subject-error" class="error-message"></span><br>
                 <label for="message" >Message</label><br>
-                <textarea name="message" id="message" style="height: 20%; width: 100%;" placeholder="Your message..."></textarea><br>
+                <textarea name="message" id="message" style="height: 20%; width: 100%;" placeholder="Your message..."></textarea>
+                <span id="message-error" class="error-message"></span><br>
                 <button type="submit" class="formsubmit">Submit</button>
 
             </form>
@@ -327,27 +331,50 @@
     </section>
         <script>
     
-           function validateForm() {
-                    let nameValue = document.myForm.name.value;
-                    let emailValue = document.myForm.email.value;
-                    let subjectValue =document.myForm.subject.value;
-                    let messageValue = document.myForm.message.value;
-                    if(nameValue==null ||nameValue==""){
-                                        alert('Name box not be blank')
-                                        return false;
-                        }else if(emailValue==null ||emailValue==""){
-                                        alert('email box not be blank')
-                                        return false;
-                        }else if(subjectValue==null ||subjectValue==""){
-                                        alert('subject box not be blank')
-                                        return false;
-                        }
-                        else if(messageValue==null ||messageValue==""){
-                                        alert('Message box not be blank')
-                                        return false;
-                        }
-   
-                    }
+          function validateForm(){
+        const userName=document.getElementById("name").value;
+        const userEmail=document.getElementById("email").value;
+        const userSubject=document.getElementById("subject").value;
+        const userMessage=document.getElementById("message").value;
+
+
+
+
+        const nameErr=document.getElementById("name-error");
+        const emailErr=document.getElementById("email-error");
+        const subjectErr=document.getElementById("subject-error");
+        const messageErr=document.getElementById("message-error");
+        
+        nameErr.textContent="";
+        emailErr.textContent="";
+        subjectErr.textContent="";
+        messageErr.textContent="";
+           let isValid =true;
+        if(userName==""||userName==null) {
+           nameErr.textContent="please enter the name";
+            return false;
+        }
+        if(userEmail == "" ||userEmail==null) {
+           emailErr.textContent="please enter the email properly";
+            return false;
+        }
+        if(userSubject==""||userSubject==null) {
+           subjectErr.textContent="please enter a subject";
+            return false;
+        }
+        if(userMessage==""||userMessage==null) {
+           messageErr.textContent="please enter your message";
+            return false;
+        }  
+        if(isValid){
+            alert('form submitted succesfully');
+            return true;
+        }else{
+            return false;
+        }
+     }
+
+
 
 
         </script>
